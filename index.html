@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI - The Official Fan Site</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('BGMI1.jpg');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #06090c;
+            color: #c9d1d9;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #30363d;
+            border-radius: 4px;
+            border: 2px solid #161b22;
+        }
+
+        .page-section {
+            display: none;
+            /* Hide all sections by default */
+        }
+
+        .page-section.active {
+            display: block;
+            /* Show the active section */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link.active {
+            color: #fff;
+            border-bottom: 2px solid #ff4d4d;
+        }
+
+        .hero-image {
+            background-image: url('bb.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-[#161b22] sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" id="home-link"
+                class="text-2xl font-bold text-red-500 hover:text-red-400 transition-colors duration-300">
+                BGMI Fan Site
+            </a>
+            <div class="space-x-4 md:space-x-8 hidden md:flex">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="home">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="about">About BGMI</a>
+                <a href="#maps" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="maps">Maps</a>
+                <a href="#weapons" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="weapons">Weapons</a>
+                <a href="#royale-pass"
+                    class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="royale-pass">Royale Pass</a>
+                <a href="#esports" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="esports">Esports</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 pb-1"
+                    data-page="contact">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-[#161b22] px-4 py-2 hidden">
+            <a href="#home"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="home">Home</a>
+            <a href="#about"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="about">About BGMI</a>
+            <a href="#maps"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="maps">Maps</a>
+            <a href="#weapons"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="weapons">Weapons</a>
+            <a href="#royale-pass"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="royale-pass">Royale Pass</a>
+            <a href="#esports"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="esports">Esports</a>
+            <a href="#contact"
+                class="nav-link block py-2 px-4 text-sm text-gray-300 hover:bg-[#30363d] rounded-md transition-colors duration-300"
+                data-page="contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto mt-8 px-4">
+
+        <!-- Home Page Section -->
+        <section id="home" class="page-section active">
+            <div
+                class="bg-gray-800 rounded-lg shadow-xl p-8 md:p-16 text-center hero-image min-h-[60vh] flex flex-col justify-center items-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-black opacity-60"></div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white z-10 drop-shadow-lg">WELCOME TO BATTLEGROUNDS
+                    MOBILE INDIA</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto z-10">The ultimate battle royale
+                    experience is here. Squad up, drop in, and conquer the battlefield!</p>
+                <a href="#about"
+                    class="mt-8 px-6 py-3 bg-red-600 text-white font-bold rounded-full shadow-lg hover:bg-red-700 transition-colors duration-300 z-10">
+                    Learn More
+                </a>
+            </div>
+        </section>
+
+        <!-- About BGMI Page Section -->
+        <section id="about" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">About BGMI</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="transformer.avif" alt="About BGMI"
+                            class="w-full rounded-lg shadow-md">
+                    </div>
+                    <div>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Battlegrounds Mobile India (BGMI) is a popular free-to-play battle royale game for mobile
+                            devices. Developed by KRAFTON, it brings a familiar and thrilling gameplay experience to
+                            Indian players, with a focus on fair play and community engagement. Players parachute onto a
+                            deserted island, scavenge for weapons and gear, and fight to be the last person or team
+                            standing. The game features various maps, modes, and events, constantly evolving to keep the
+                            experience fresh and exciting.
+                        </p>
+                        <p class="mt-4 text-gray-300 text-lg leading-relaxed">
+                            BGMI is not just a game; it's a cultural phenomenon, with a massive esports scene and a
+                            dedicated community of content creators and players. Join millions of players and prove your
+                            skills in the ultimate battle for survival.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maps Page Section -->
+        <section id="maps" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">Explore the Maps</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Map Card 1 -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-4 transition-transform duration-300 hover:scale-105">
+                    <img src="erangel.webp" alt="Erangel Map"
+                        class="w-full rounded-md shadow-sm">
+                    <h3 class="text-2xl font-semibold mt-4 text-white">Erangel</h3>
+                    <p class="text-gray-400 mt-2">The classic 8x8 km map with diverse terrain and a mix of urban and
+                        rural combat zones.</p>
+                </div>
+                <!-- Map Card 2 -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-4 transition-transform duration-300 hover:scale-105">
+                    <img src="miramar.jpg" alt="Miramar Map"
+                        class="w-full rounded-md shadow-sm">
+                    <h3 class="text-2xl font-semibold mt-4 text-white">Miramar</h3>
+                    <p class="text-gray-400 mt-2">A vast, desert-themed 8x8 km map ideal for long-range engagements and
+                        vehicle combat.</p>
+                </div>
+                <!-- Map Card 3 -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-4 transition-transform duration-300 hover:scale-105">
+                    <img src="sanhok.jpg" alt="Sanhok Map"
+                        class="w-full rounded-md shadow-sm">
+                    <h3 class="text-2xl font-semibold mt-4 text-white">Sanhok</h3>
+                    <p class="text-gray-400 mt-2">A smaller, dense 4x4 km rainforest map with intense, fast-paced
+                        action.</p>
+                </div>
+                <!-- Map Card 4 -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-4 transition-transform duration-300 hover:scale-105">
+                    <img src="livik.jpg" alt="Livik Map"
+                        class="w-full rounded-md shadow-sm">
+                    <h3 class="text-2xl font-semibold mt-4 text-white">Livik</h3>
+                    <p class="text-gray-400 mt-2">A compact 2x2 km Nordic-themed map designed for quick and engaging
+                        matches.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weapons Page Section -->
+        <section id="weapons" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">Weapons Arsenal</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Weapon Category 1 -->
+                    <div class="text-center transition-transform duration-300 hover:scale-105">
+                        <img src="glacier.avif" alt="Assault Rifles"
+                            class="mx-auto rounded-md mb-4 shadow-sm">
+                        <h3 class="text-2xl font-semibold text-white">Assault Rifles</h3>
+                        <p class="text-gray-400 mt-2">Versatile weapons for mid-to-long range combat. Eg: M416, AKM,
+                            Scar-L.</p>
+                    </div>
+                    <!-- Weapon Category 2 -->
+                    <div class="text-center transition-transform duration-300 hover:scale-105">
+                        <img src="M24.jpg" alt="Sniper Rifles"
+                            class="mx-auto rounded-md mb-4 shadow-sm">
+                        <h3 class="text-2xl font-semibold text-white">Sniper Rifles</h3>
+                        <p class="text-gray-400 mt-2">Powerful long-range weapons for precision shots. Eg: AWM, Kar98k,
+                            M24.</p>
+                    </div>
+                    <!-- Weapon Category 3 -->
+                    <div class="text-center transition-transform duration-300 hover:scale-105">
+                        <img src="lmg.jpg_large" alt="SMGs"
+                            class="mx-auto rounded-md mb-4 shadow-sm">
+                        <h3 class="text-2xl font-semibold text-white">SMGs</h3>
+                        <p class="text-gray-400 mt-2">High rate of fire weapons for close-quarters battles. Eg: UZI,
+                            Vector, UMP45.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Royale Pass Page Section -->
+        <section id="royale-pass" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">Royale Pass</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <img src="royal.jpg" alt="Royale Pass"
+                        class="w-full rounded-lg shadow-md">
+                    <div>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            The Royale Pass is a tiered reward system in BGMI. By completing daily and weekly missions,
+                            players can earn RP points and level up their pass. Each level unlocks new rewards,
+                            including exclusive outfits, weapon skins, emotes, and more.
+                        </p>
+                        <p class="mt-4 text-gray-300 text-lg leading-relaxed">
+                            There are two types of Royale Pass: the Free Pass and the Elite Pass. The Elite Pass offers
+                            even more rewards for players who purchase it with UC (in-game currency). Don't miss out on
+                            the chance to customize your character and stand out on the battlefield!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Esports Page Section -->
+        <section id="esports" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">Esports</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10">
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    BGMI has a thriving and competitive esports ecosystem. Professional players and teams compete in
+                    major tournaments for huge prize pools, showcasing their skills and strategies to a global audience.
+                    The official BGMI esports circuit includes various stages, from open qualifiers to grand finals,
+                    providing a clear path for aspiring players to make a name for themselves.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-gray-700 rounded-lg p-4 shadow-sm">
+                        <h4 class="text-xl font-bold text-white mb-2">BGMI Pro Series</h4>
+                        <p class="text-gray-400">The premier tournament featuring top teams from across the country.</p>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4 shadow-sm">
+                        <h4 class="text-xl font-bold text-white mb-2">BGMI Open Challenge</h4>
+                        <p class="text-gray-400">An opportunity for amateur teams to compete and qualify for the pro
+                            leagues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Section -->
+        <section id="contact" class="page-section">
+            <h2 class="text-4xl font-bold mb-6 text-center text-red-500">Contact Us</h2>
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10 max-w-lg mx-auto">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name"
+                            class="w-full bg-gray-700 text-gray-200 border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full bg-gray-700 text-gray-200 border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            class="w-full bg-gray-700 text-gray-200 border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-red-600 text-white font-bold py-3 rounded-md shadow-md hover:bg-red-700 transition-colors duration-300">
+                        Send Message
+                    </button>
+                    <!-- Message Box for feedback -->
+                    <div id="message-box" class="mt-4 p-3 bg-green-600 text-white rounded-md hidden">
+                        Thank you for your message! We will get back to you shortly.
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-6 bg-[#161b22] text-center text-gray-400">
+        <p>&copy; 2024 BGMI Fan Site. All rights reserved.</p>
+        <p class="mt-2">This is a fan-made website and is not affiliated with KRAFTON or BGMI.</p>
+    </footer>
+
+    <!-- JavaScript for page navigation and form handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageSections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contact-form');
+            const messageBox = document.getElementById('message-box');
+
+            // Function to show a specific page and update the active nav link
+            const showPage = (pageId) => {
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                document.getElementById(pageId).classList.add('active');
+                document.querySelectorAll(`[data-page="${pageId}"]`).forEach(link => {
+                    link.classList.add('active');
+                });
+                // Close mobile menu on page change
+                if (mobileMenu.classList.contains('flex')) {
+                    mobileMenu.classList.remove('flex');
+                    mobileMenu.classList.add('hidden');
+                }
+            };
+
+            // Handle nav link clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+
+            // Handle mobile menu button click
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileMenu.classList.toggle('flex-col');
+            });
+
+            // Handle form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent the form from actually submitting
+
+                // Simulate a successful form submission
+                messageBox.classList.remove('hidden');
+                contactForm.reset();
+
+                // Hide the message after a few seconds
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 5000);
+            });
+
+            // Set initial page based on URL hash or default to home
+            const hash = window.location.hash.substring(1) || 'home';
+            showPage(hash);
+        });
+    </script>
+</body>
+
+</html>
